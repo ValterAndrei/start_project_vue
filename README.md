@@ -2,7 +2,7 @@
 
 1. Create files
 ```
-touch Dockerfile docker-compose.yml
+touch Dockerfile docker-compose.yml .dockerignore
 ```
 
 * Dockerfile
@@ -37,6 +37,13 @@ services:
 # docker run --name vue_app_container --rm -v $(pwd):/my_app -it -p 8080:8080 vue_application
 ```
 
+* .dockerignore
+```
+node_modules
+.git
+.gitignore
+```
+
 2. Buid image from `Dockerfile`
 ```
 docker build -t vue_application .
@@ -52,20 +59,13 @@ docker container run --rm -v $(pwd):/my_app -it vue_application sh
 vue create .
 ```
 
-5. Ignoring files, `touch .dockerignore`
-```
-node_modules
-.git
-.gitignore
-```
-
-6. Changing file permission
+5. Changing file permission
 
 ```
 $ sudo chown -R $USER:$USER .
 ```
 
-7. Up server
+6. Up server
 
 ```
 $ docker-compose up app
