@@ -27,17 +27,17 @@ version: '3.7'
 services:
   app:
     image: vue_application
+    container_name: vue_app_container
     ports:
       - '8080:8080'
     volumes:
       - ./:/my_app
-    working_dir: /my_app
     command: 'npm run serve'
 
 # docker run --name vue_app_container --rm -v $(pwd):/my_app -it -p 8080:8080 vue_application
 ```
 
-2. Create image from `Dockerfile`
+2. Buid image from `Dockerfile`
 ```
 docker build -t vue_application .
 ```
@@ -72,3 +72,20 @@ $ docker-compose up app
 ```
 
 > `localhost:8080`
+
+
+---
+
+
+### If your project already exists:
+
+1. Buid image from `Dockerfile`
+```
+docker build -t vue_application .
+```
+
+2. Up server
+
+```
+$ docker-compose up app
+```
