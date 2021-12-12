@@ -62,13 +62,13 @@ vue create .
 5. Changing file permission
 
 ```
-$ sudo chown -R $USER:$USER .
+sudo chown -R $USER:$USER .
 ```
 
 6. Up server
 
 ```
-$ docker-compose up app
+docker-compose up app
 ```
 
 > `localhost:8080`
@@ -87,5 +87,5 @@ docker build -t vue_application .
 2. Up server
 
 ```
-$ docker-compose up app
+docker-compose up app
 ```
