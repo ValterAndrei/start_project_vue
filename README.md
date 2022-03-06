@@ -54,7 +54,7 @@ docker build -t vue_application .
 docker container run --rm -v $(pwd):/my_app -it vue_application sh
 ```
 
-4. Create the project
+4. Create the project _(choose NPM on installation)_
 ```
 vue create .
 ```
