@@ -57,7 +57,7 @@ docker build -t vue_application .
 ```
 docker-compose run --rm app sh
 
-# ou:
+# or:
 docker container run --rm -v $(pwd):/my_app -it vue_application sh
 ```
 
@@ -77,7 +77,7 @@ sudo chown -R $USER:$USER .
 ```
 docker-compose up app
 
-# ou:
+# or:
 docker container run --rm -v $(pwd):/my_app -it -p 8080:8080 vue_application
 ```
 
@@ -99,6 +99,6 @@ docker build -t vue_application .
 ```
 docker-compose up app
 
-# ou:
+# or:
 docker container run --rm -v $(pwd):/my_app -it -p 8080:8080 vue_application
 ```
