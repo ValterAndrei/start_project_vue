@@ -41,7 +41,7 @@ services:
     # command: 'npm run serve' # for NPM manager
 
 
-# docker run --name vue_app_container --rm -v $(pwd):/my_app -it -p 8080:8080 vue_application
+# docker container run --rm -it vue_application sh
 ```
 
 * .dockerignore
