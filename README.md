@@ -40,7 +40,7 @@ services:
     command: 'yarn serve'
     # command: 'npm run serve' # for NPM manager
 
-
+# without docker-compose
 # docker run --name vue_app_container --rm -v $(pwd):/my_app -it -p 8080:8080 vue_application
 ```
 
