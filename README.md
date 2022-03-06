@@ -55,11 +55,10 @@ docker build -t vue_application .
 
 3. Access the container
 ```
-docker container run --rm -v $(pwd):/my_app -it vue_application sh
+docker-compose run --rm app sh
 
 # ou:
-
-docker-compose run --rm app sh
+docker container run --rm -v $(pwd):/my_app -it vue_application sh
 ```
 
 4. Create the project
@@ -76,11 +75,10 @@ sudo chown -R $USER:$USER .
 6. Up server
 
 ```
-docker container run --rm -v $(pwd):/my_app -it -p 8080:8080 vue_application
+docker-compose up app
 
 # ou:
-
-docker-compose up app
+docker container run --rm -v $(pwd):/my_app -it -p 8080:8080 vue_application
 ```
 
 > `localhost:8080`
