@@ -57,7 +57,7 @@ docker build -t vue_application .
 ```
 docker container run --rm -v $(pwd):/my_app -it vue_application sh
 
-#ou:
+# ou:
 
 docker-compose run --rm app sh
 ```
