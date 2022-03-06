@@ -98,4 +98,7 @@ docker build -t vue_application .
 
 ```
 docker-compose up app
+
+# ou:
+docker container run --rm -v $(pwd):/my_app -it -p 8080:8080 vue_application
 ```
