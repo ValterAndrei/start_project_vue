@@ -41,7 +41,7 @@ services:
     # command: 'npm run serve' # for NPM manager
 
 
-# docker container run --rm -it vue_application sh
+# docker run --name vue_app_container --rm -v $(pwd):/my_app -it -p 8080:8080 vue_application
 ```
 
 * .dockerignore
@@ -58,7 +58,7 @@ docker build -t vue_application .
 
 3. Access the container
 ```
-docker container run --rm -v $(pwd):/my_app -it vue_application sh
+docker container run --rm -it vue_application sh
 ```
 
 4. Create the project _(choose NPM on installation)_
