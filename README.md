@@ -58,7 +58,7 @@ docker build -t vue_application .
 
 3. Access the container
 ```
-docker container run --rm -it vue_application sh
+docker container run --rm -v $(pwd):/my_app -it vue_application sh
 
 #ou:
 
