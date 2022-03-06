@@ -10,18 +10,18 @@ touch Dockerfile docker-compose.yml .dockerignore
 # Yarn manager
 FROM node:16-alpine3.12
 RUN yarn global add @vue/cli
-RUN mkdir /my_app
-WORKDIR /my_app
-COPY . /my_app
+RUN mkdir /app
+WORKDIR /app
+COPY . /app
 CMD [ "yarn", "serve" ]
 
 
 # NPM manager
 # FROM node:16-alpine3.12
 # RUN npm install -g @vue/cli
-# RUN mkdir /my_app
-# WORKDIR /my_app
-# COPY . /my_app
+# RUN mkdir /app
+# WORKDIR /app
+# COPY . /app
 # CMD [ "npm", "rum", "serve" ]
 ```
 
@@ -36,7 +36,7 @@ services:
     ports:
       - '8080:8080'
     volumes:
-      - ./:/my_app
+      - ./:/app
     command: 'yarn serve'
     # command: 'npm run serve' # for NPM manager
 ```
@@ -58,7 +58,7 @@ docker build -t vue_application .
 docker-compose run --rm app sh
 
 # or:
-docker container run --rm -v $(pwd):/my_app -it vue_application sh
+docker container run --rm -v $(pwd):/app -it vue_application sh
 ```
 
 4. Create the project
@@ -78,7 +78,7 @@ sudo chown -R $USER:$USER .
 docker-compose up app
 
 # or:
-docker container run --rm -v $(pwd):/my_app -it -p 8080:8080 vue_application
+docker container run --rm -v $(pwd):/app -it -p 8080:8080 vue_application
 ```
 
 > `localhost:8080`
@@ -100,5 +100,5 @@ docker build -t vue_application .
 docker-compose up app
 
 # or:
-docker container run --rm -v $(pwd):/my_app -it -p 8080:8080 vue_application
+docker container run --rm -v $(pwd):/app -it -p 8080:8080 vue_application
 ```
