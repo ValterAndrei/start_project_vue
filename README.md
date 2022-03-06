@@ -7,17 +7,22 @@ touch Dockerfile docker-compose.yml .dockerignore
 
 * Dockerfile
 ```dockerfile
+# Yarn manager
 FROM node:16-alpine3.12
-
-RUN npm install -g @vue/cli
-
+RUN yarn global add @vue/cli
 RUN mkdir /my_app
-
 WORKDIR /my_app
-
 COPY . /my_app
+CMD [ "yarn", "serve" ]
 
-CMD [ "npm", "rum", "serve" ]
+
+# NPM manager
+# FROM node:16-alpine3.12
+# RUN npm install -g @vue/cli
+# RUN mkdir /my_app
+# WORKDIR /my_app
+# COPY . /my_app
+# CMD [ "npm", "rum", "serve" ]
 ```
 
 * docker-compose
@@ -32,7 +37,9 @@ services:
       - '8080:8080'
     volumes:
       - ./:/my_app
-    command: 'npm run serve'
+    command: 'yarn serve'
+    # command: 'npm run serve' # for NPM manager
+
 
 # docker run --name vue_app_container --rm -v $(pwd):/my_app -it -p 8080:8080 vue_application
 ```
