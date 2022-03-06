@@ -102,3 +102,6 @@ docker-compose up app
 # or:
 docker container run --rm -v $(pwd):/app -it -p 8080:8080 vue_application
 ```
+
+### Deploying at Heroku
+- [Tutorial](https://betterprogramming.pub/deploying-a-vue-js-app-to-heroku-d16f95c07a04)
