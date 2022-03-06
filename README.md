@@ -1,4 +1,4 @@
-### Starting a new Vue project using docker-compose
+### Starting a new Vue project using docker and docker-compose
 
 1. Create files
 ```
