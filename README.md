@@ -39,9 +39,6 @@ services:
       - ./:/my_app
     command: 'yarn serve'
     # command: 'npm run serve' # for NPM manager
-
-# without docker-compose.yml
-# docker run --name vue_app_container --rm -v $(pwd):/my_app -it -p 8080:8080 vue_application
 ```
 
 * .dockerignore
@@ -65,7 +62,7 @@ docker container run --rm -v $(pwd):/my_app -it vue_application sh
 docker-compose run --rm app sh
 ```
 
-4. Create the project _(choose NPM on installation)_
+4. Create the project
 ```
 vue create .
 ```
@@ -79,6 +76,10 @@ sudo chown -R $USER:$USER .
 6. Up server
 
 ```
+docker container run --rm -v $(pwd):/my_app -it -p 8080:8080 vue_application
+
+# ou:
+
 docker-compose up app
 ```
 
