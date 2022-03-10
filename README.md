@@ -49,37 +49,34 @@ node_modules
 ```
 
 2. Buid image from `Dockerfile`
-```
+```bash
 docker build -t vue_application .
 ```
 
 3. Access the container
-```
+```bash
 docker-compose run --rm app sh
-
-# or:
-docker container run --rm -v $(pwd):/app -it vue_application sh
 ```
+> docker container run --rm -v $(pwd):/app -it vue_application sh
+
 
 4. Create the project
-```
+```bash
 vue create .
 ```
 
 5. Changing file permission
 
-```
+```bash
 sudo chown -R $USER:$USER .
 ```
 
 6. Up server
 
-```
+```bash
 docker-compose up app
-
-# or:
-docker container run --rm -v $(pwd):/app -it -p 8080:8080 vue_application
 ```
+> docker container run --rm -v $(pwd):/app -it -p 8080:8080 vue_application
 
 > `localhost:8080`
 
@@ -90,18 +87,16 @@ docker container run --rm -v $(pwd):/app -it -p 8080:8080 vue_application
 ### If your project already exists:
 
 1. Buid image from `Dockerfile`
-```
+```bash
 docker build -t vue_application .
 ```
 
 2. Up server
 
-```
+```bash
 docker-compose up app
-
-# or:
-docker container run --rm -v $(pwd):/app -it -p 8080:8080 vue_application
 ```
+> docker container run --rm -v $(pwd):/app -it -p 8080:8080 vue_application
 
 ### Deploying at Heroku
 - [Tutorial](https://betterprogramming.pub/deploying-a-vue-js-app-to-heroku-d16f95c07a04)
