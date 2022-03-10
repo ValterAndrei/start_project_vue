@@ -32,7 +32,6 @@ version: '3.7'
 services:
   app:
     image: vue_application
-    # build: . # for without 'image'
     container_name: vue_app_container
     ports:
       - '8080:8080'
