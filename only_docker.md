@@ -2,7 +2,7 @@
 
 1. Create files
 ```
-touch Dockerfile docker-compose.yml .dockerignore
+touch Dockerfile .dockerignore
 ```
 
 * Dockerfile
@@ -24,22 +24,6 @@ CMD [ "yarn", "serve" ]
 # CMD [ "npm", "rum", "serve" ]
 ```
 
-* docker-compose.yml
-```yml
-version: '3.7'
-
-services:
-  app:
-    build: .
-    container_name: vue_app_container
-    ports:
-      - '8080:8080'
-    volumes:
-      - ./:/app
-    command: 'yarn serve'
-    # command: 'npm run serve' # for NPM manager
-```
-
 * .dockerignore
 ```
 node_modules
@@ -47,26 +31,31 @@ node_modules
 .gitignore
 ```
 
-2. Access the container
+2. Buid image from `Dockerfile`
 ```bash
-docker-compose run --rm app sh
+docker build -t vue_application .
 ```
 
-3. Create the project
+3. Access the container
+```bash
+docker container run --rm -v $(pwd):/app -it vue_application sh
+```
+
+4. Create the project
 ```bash
 vue create .
 ```
 
-4. Changing file permission
+5. Changing file permission
 
 ```bash
 sudo chown -R $USER:$USER .
 ```
 
-5. Up server
+6. Up server
 
 ```bash
-docker-compose up app
+docker container run --rm -v $(pwd):/app -it -p 8080:8080 vue_application
 ```
 > `localhost:8080`
 
@@ -78,13 +67,13 @@ docker-compose up app
 
 1. Buid image from `Dockerfile`
 ```bash
-docker-compose build
+docker build -t vue_application .
 ```
 
 2. Up server
 
 ```bash
-docker-compose up app
+docker container run --rm -v $(pwd):/app -it -p 8080:8080 vue_application
 ```
 
 ### Deploying at Heroku
