@@ -87,5 +87,10 @@ docker-compose build
 docker-compose up app
 ```
 
+---
+
+### Only Docker example
+- [Tutorial](/only_docker.md)
+
 ### Deploying at Heroku
 - [Tutorial](https://cli.vuejs.org/guide/deployment.html#heroku)
