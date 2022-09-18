@@ -21,7 +21,7 @@ CMD [ "yarn", "serve" ]
 # RUN mkdir /app
 # WORKDIR /app
 # COPY . /app
-# CMD [ "npm", "rum", "serve" ]
+# CMD [ "npm", "run", "serve" ]
 ```
 
 * .dockerignore
