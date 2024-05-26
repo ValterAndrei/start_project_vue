@@ -26,8 +26,6 @@ CMD [ "yarn", "serve" ]
 
 * docker-compose.yml
 ```yml
-version: '3.7'
-
 services:
   app:
     build: .
@@ -36,8 +34,8 @@ services:
       - '8080:8080'
     volumes:
       - ./:/app
-    command: 'yarn serve'
-    # command: 'npm run serve' # for NPM manager
+    command: yarn serve
+    # command: npm run serve # for NPM manager
 ```
 
 * .dockerignore
