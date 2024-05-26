@@ -7,21 +7,14 @@ touch Dockerfile .dockerignore
 
 * Dockerfile
 ```dockerfile
-# Yarn manager
-FROM node:16-alpine3.12
-RUN yarn global add @vue/cli
+FROM node:20-alpine3.19
+RUN npm install -g @vue/cli
 RUN mkdir /app
 WORKDIR /app
 COPY . /app
-CMD [ "yarn", "serve" ]
-
-# NPM manager
-# FROM node:16-alpine3.12
-# RUN npm install -g @vue/cli
-# RUN mkdir /app
-# WORKDIR /app
-# COPY . /app
-# CMD [ "npm", "run", "serve" ]
+RUN yarn install
+EXPOSE 8080
+CMD ['yarn', 'serve']
 ```
 
 * .dockerignore
