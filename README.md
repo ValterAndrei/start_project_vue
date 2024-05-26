@@ -28,7 +28,6 @@ services:
     volumes:
       - ./:/app
     command: yarn serve
-    # command: npm run serve # for NPM manager
 ```
 
 * .dockerignore
