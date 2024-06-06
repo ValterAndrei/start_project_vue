@@ -44,14 +44,15 @@ docker-compose run --rm app sh
 
 3. Create the project
 ```bash
-vue create .
+Vue create .
 ```
 
 4. Changing file permission
 
 ```bash
-sudo chown -R $USER:$USER .
+chown -R $USER:$USER .
 ```
+get out of the container by `Ctrl + D`
 
 5. Up server
 
