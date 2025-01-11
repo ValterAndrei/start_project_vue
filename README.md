@@ -84,3 +84,6 @@ docker-compose up app
 
 ### Deploying at Heroku
 - [Tutorial](https://cli.vuejs.org/guide/deployment.html#heroku)
+
+### Vue references
+- [Tutorial](https://br.vuejs.org/v2/cookbook/dockerize-vuejs-app.html)
